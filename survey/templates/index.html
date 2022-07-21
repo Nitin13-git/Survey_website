@@ -1,0 +1,74 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+Survey India Website - Form 
+{% endblock title %}
+
+{% block head %} 
+<link rel="stylesheet" media="all" href="/static/css/notices.css" />
+{% endblock head %}
+
+{% block body %}  
+      <!-- begin: Alert Box -->
+      {% if messages %}
+      {% for message in messages %}
+      <div class="notice_box notice_info">
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      <!-- end: Alert Box -->
+
+    <br><br>
+    <center>
+    <form method="post">
+        {% csrf_token %}
+
+    <h1><b>Please Fill This Form</b></h1><br>
+    <div id="first_name_block">First Name: <input type="text" name="first_name"  class="bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><br></div>
+    <div class="hide_this_div" id="last_name_block">Last Name: <input type="text" name="last_name"  class="bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></div>
+      
+
+    <div class="hide_this_div" id="gender_block">
+    <br><br>
+    <h1><b>Gender</b></h1>
+    <input type="Radio" name="Gender" value="Male">Male
+    <input type="Radio" name="Gender" value="Female">Female   
+    <br><br>
+    </div>
+
+    <div class="hide_this_div" id="preference_block">
+    <h1><b>Preference</b></h1>  
+    <input type="checkbox" name="City" value="IIT Roper">  IIT Roper<br>
+    <input type="checkbox" name="City" value="IIT Kanpur">  IIT Kanpur<br><br></div>
+           
+    <div class="hide_this_div" id="from_date_block">    
+    <div class="container">
+    <label>From Date</label>
+    <input type="Date" name="from_date" max="" id="From date">
+    <br></br> </div> 
+
+    <div class="hide_this_div" id="to_date_block">
+    <label>From Date</label>
+    <input type="Date" name="to_date" max="" id="TO Date">  
+    </div><br></br></div>
+
+    <div class="hide_this_div" id="slider_block">
+    <label class="form-label" for="customRange1">Example range</label>
+    <div class="range"><input type="range" class="form-range" id="customRange1" /></div>  
+    </div>
+
+    <br><br>  
+      <button id="next_btn1" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="button">Next 1 </button>
+      <button id="next_btn2" class="hide_this_div text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="button">Next 2 </button>
+      <button id="next_btn3" class="hide_this_div text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="button">Next 3 </button>
+      <button id="next_btn4" class="hide_this_div text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="button">Next 4 </button>
+      <button id="submit_btn" class="hide_this_div text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit" name="submit">Submit Survey </button>
+    </div>
+    <br>
+ </form>
+</center>
+{% endblock body %}
+
+
+

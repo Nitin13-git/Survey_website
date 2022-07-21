@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+Survey India Website - Dashboard
+{% endblock title %}
+
+{% block head %} 
+<link rel="stylesheet" media="all" href="/static/css/notices.css" />
+{% endblock head %}
+
+{% block body %}  
+      <!-- begin: Alert Box -->
+      {% if messages %}
+      {% for message in messages %}
+      <div class="notice_box notice_info">
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      <!-- end: Alert Box -->
+
+    <br><br>
+    <center>
+    <form method="post">
+        {% csrf_token %}
+
+    <h1><b>Portal to Fetch Data From Database</b></h1><br>
+    <h1><b>Gender</b></h1>
+    <input type="Radio" name="Gender" value="Male">Male
+    <input type="Radio" name="Gender" value="Female">Female   
+    <br><br>
+
+    <h1><b>Preference</b></h1>  
+    <input type="checkbox" name="City" value="IIT Roper">  IIT Roper<br>
+    <input type="checkbox" name="City" value="IIT Kanpur">  IIT Kanpur<br><br>
+           
+         
+    <div class="container">
+    <label>From Date</label>
+    <input type="Date" name="from_date" max="" id="From date">
+    <br></br>  
+    <label>From Date</label>
+    <input type="Date" name="to_date" max="" id="TO Date">  
+    </div><br></br>
+
+    <label class="form-label" for="customRange1">Example range</label>
+    <div class="range"><input type="range" class="form-range" id="customRange1" /></div>  
+    <br><br> 
+    <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit" name="submit">Fetch Survey</button>
+    <br>
+ </form>
+</center>
+<br><br><br>
+<center>
+      <!-- begin: DB Data -->
+      {% if list_of_rows %}
+      {% for row in list_of_rows %}
+      <div class="notice_box notice_success">
+        <ul>
+        <li>Name: {{ row.first_name }}</li>
+        <li>City: {{ row.city }}</li>
+        </ul>
+      </div>
+      {% endfor %}
+      {% endif %}
+      <!-- end: DB Data -->
+</center>
+{% endblock body %}
+
+
+

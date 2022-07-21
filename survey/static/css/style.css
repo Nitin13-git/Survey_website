@@ -1,0 +1,16 @@
+body
+
+{
+ min-height: 100vh;
+ background: #757575;
+
+}
+
+footer{
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ 
+}

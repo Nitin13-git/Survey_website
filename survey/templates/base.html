@@ -1,0 +1,56 @@
+<html>
+    <head> 
+        <title>
+            {% block title %} {% endblock title %}
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        {% block head %} {% endblock head %}
+       <link rel="stylesheet",type=text/css, href="/static/css/style.css">
+<style>
+
+</style>
+    
+    </head>
+
+    <body>
+
+
+    <!-- begin: Header -->
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img src="https://th.bing.com/th/id/R.02f0f60d0e8a1bbb96d982ca167a8e9f?rik=y9i6MG643ha9Zg&riu=http%3a%2f%2fwww.iitrpr.ac.in%2fsites%2fdefault%2ffiles%2fimage.jpg&ehk=3UShEYt0jhTuEEb4XGL2uBN7ilXpQuwbRPrNZXywfPY%3d&risl=&pid=ImgRaw&r=0"  width="50px" height="50px">
+            <span class="ml-3 text-xl">Survey Website</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+           
+            <a class="mr-5 hover:text-gray-900" href="/dashboard">Dashboard</a>
+          </nav>
+        
+        </div>
+      </header>
+      <hr>
+    <!-- end: Header -->
+   <br>
+   <br>
+   <br>
+
+
+    {% block body %}  {% endblock body %}
+    <!-- beign: Footer -->
+    
+    <!-- end: Footer -->
+    <script src="/static/js/view.js"></script>
+
+<br><br>
+<br><br>
+<footer>
+<div class="footer"><h3>All right reserved @Admin 2022</h3></div>
+
+</footer>
+    </body>
+
+
+</html>
+

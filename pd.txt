@@ -1,0 +1,10 @@
+## Implemented
+* Project Name : survey 
+* Application  : home
+
+
+## TODO List
+- [ ] Taking user input e.g. : text, numeric, checkbox, slider, Date/DateRange
+- [ ] Database to save user input in Table=='SurveyTable'
+
+ 
